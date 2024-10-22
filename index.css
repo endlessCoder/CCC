@@ -39,12 +39,12 @@ body {
 
   .left-area {
     position: relative;
-    width: 1000px;
-    height: 1000px;
+    width: 600px;
+    height: auto;
   }
 
   .right-area {
-    width: calc(100% - 1010px);
+    width: calc(100% - 610px);
     height: 95%;
     margin-left: 10px;
     position: relative;
@@ -60,7 +60,8 @@ body {
     content: "";
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #7777e3, #77e7e7, #7f7fe1, #72e7e7);
+    /* background: linear-gradient(45deg, #7777e3, #77e7e7, #7f7fe1, #72e7e7); */
+    background: linear-gradient(45deg, #e0eded, #75a1a1, #cde7e7, #789b9b);
     background-size: 400% 400%;
     animation: gradientAnimation 10s ease infinite;
   }
