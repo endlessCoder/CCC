@@ -1,0 +1,338 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 100%;
+
+  .left-menu {
+    width: 202px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    float: left;
+  }
+
+  .container {
+    width: calc(100% - 232px);
+    height: 100vh;
+    float: left;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+}
+
+.top-area {
+  background-color: #eeeeee;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  flex: 1;
+
+  .left-area {
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+  }
+
+  .right-area {
+    width: calc(100% - 1010px);
+    height: 95%;
+    margin-left: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px 1px #8e8acf;
+  }
+
+  .right-area::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #7777e3, #77e7e7, #7f7fe1, #72e7e7);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+  }
+
+  .right-content {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background-color: #e0e0ef;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    max-height: 100%;
+    overflow-y: auto;
+
+    .primary-ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .primary-ul li {
+      width: 48%;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 6px 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      align-items: center;
+    }
+
+    .primary-ul li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .primary-ul li .key {
+      font-size: 18px;
+      color: #333;
+      white-space: nowrap;
+    }
+
+    .primary-ul li .value {
+      margin: 0;
+      font-size: 14px;
+      color: #666;
+      text-align: left;
+    }
+
+    .price-list {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 18px;
+      text-align: left;
+    }
+
+    .price-list caption {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .price-list th,
+    .price-list td {
+      border: 1px solid #999;
+      padding: 8px;
+      color:#666;
+    }
+
+    .price-list th {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    .price-list tr:hover {
+      background-color: #e3dfdf52;
+    }
+  }
+  /* 自定义滚动条样式 */
+  .right-content::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .right-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  .right-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+
+  .right-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.footer {
+  background-color: #f1f1f1;
+  color: #fff;
+  padding: 10px 0;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+
+    li {
+      width: 143px;
+      height: 100px;
+      position: relative;
+      margin-right: 16px;
+      cursor: pointer;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("./img/base.png");
+      background-size: contain;
+      background-position: center;
+      z-index: 1;
+    }
+
+    li .title {
+      position: relative;
+      z-index: 2;
+      color: #333;
+      font-size: 24px;
+      white-space: nowrap;
+      text-align: center;
+      top: 30px;
+    }
+
+    .title-bg.checked {
+      .title {
+        color: #2424c3;
+        font-weight: 600;
+        animation: float 3s ease-in-out infinite;
+      }
+    }
+    .title-bg:hover {
+      .title {
+        animation: float 3s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+/* Modal样式 */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+.modal.show {
+  display: block;
+  opacity: 1; /* 显示时的透明度 */
+}
+.modal-content {
+  background-color: #f1f1f1;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 700px;
+  height: 400px; 
+  border-radius: 10px;
+  position: relative;
+  transition: transform 0.3s ease; 
+  transform: translateY(-50px); 
+}
+.line-bg{
+  position: absolute;
+  top: 0;
+}
+.modal.show .modal-content {
+  transform: translateY(0); /* 显示时的位置 */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 左边的特效 */
+.big-ball {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+  border-radius: 50%;
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+}
+
+.small-ball {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: -webkit-linear-gradient(left, #00aeff, #1fc7d3);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 3s;
+  animation: fadeIn 2s forwards;
+}
+
+.small-ball:hover {
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
