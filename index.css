@@ -84,6 +84,11 @@ a {
     max-height: 100%;
     overflow-y: auto;
 
+    h2 {
+      color: #333;
+      font-size: 24px;
+    }
+
     .primary-ul {
       list-style-type: none;
       padding: 0;
@@ -133,16 +138,17 @@ a {
     }
 
     .price-list caption {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: bold;
       margin-bottom: 10px;
+      color: #333;
     }
 
     .price-list th,
     .price-list td {
       border: 1px solid #999;
       padding: 8px;
-      color:#666;
+      color: #666;
     }
 
     .price-list th {
@@ -151,6 +157,68 @@ a {
     }
     .price-list tr:hover {
       background-color: #e3dfdf52;
+    }
+
+
+
+    .price-list .button-group {
+      display: flex;
+      gap: 10px;
+
+      .delete-btn{
+        background-color: #f00;
+      }
+      .delete-btn:hover{
+        background-color: #b91111;
+      }
+    }
+    .add-gift{
+      display: flex;
+      justify-content: end;
+      .add-btn{
+        padding: 12px 12px;
+        width: 60px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+    }
+    
+    .price-list .button-group button {
+      padding: 8px 12px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .price-list .button-group button:hover {
+      background-color: #0056b3;
+    }
+
+    .price-list .channel-item {
+      list-style: none;
+      padding: 0;
+    }
+
+    .price-list .channel-item li {
+      margin-bottom: 10px;
+    }
+
+    .price-list .channel-title {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .price-list .channel-options {
+      display: inline-block;
+    }
+
+    .price-list .channel-options input[type="radio"] {
+      margin-right: 5px;
     }
   }
   /* 自定义滚动条样式 */
@@ -234,6 +302,62 @@ a {
         color: #2424c3;
         font-weight: 600;
         animation: float 3s ease-in-out infinite;
+        a {
+          color: #2424c3;
+        }
+      }
+    }
+    .title-bg:hover {
+      .title {
+        animation: float 3s ease-in-out infinite;
+      }
+    }
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+
+    a {
+      display: block;
+    }
+    .title-bg {
+      width: 143px;
+      height: 100px;
+      position: relative;
+      margin-right: 16px;
+      cursor: pointer;
+    }
+
+    .title-bg::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("./img/base.png");
+      background-size: contain;
+      background-position: center;
+      z-index: 1;
+    }
+
+    .title-bg .title {
+      position: relative;
+      z-index: 2;
+      color: #333;
+      font-size: 24px;
+      white-space: nowrap;
+      text-align: center;
+      top: 30px;
+    }
+
+    .title-bg.checked {
+      .title {
+        color: #2424c3;
+        font-weight: 600;
+        animation: float 3s ease-in-out infinite;
       }
     }
     .title-bg:hover {
@@ -246,7 +370,7 @@ a {
 
 /* Modal样式 */
 .modal {
-  display: none; 
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -254,7 +378,7 @@ a {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .modal.show {
   display: block;
@@ -266,13 +390,13 @@ a {
   padding: 20px;
   border: 1px solid #888;
   width: 800px;
-  height: 500px; 
+  height: 500px;
   border-radius: 10px;
   position: relative;
-  transition: transform 0.3s ease; 
-  transform: translateY(-50px); 
+  transition: transform 0.3s ease;
+  transform: translateY(-50px);
 }
-.line-bg{
+.line-bg {
   position: absolute;
   top: 0;
 }

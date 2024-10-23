@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="nana.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <style>
+        .big-ball {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+            border-radius: 50%;
+            left: calc(50% - 100px);
+            top: calc(50% - 100px);
+        }
+
+        .small-ball {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: -webkit-linear-gradient(left, #00aeff, #1fc7d3);
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 3s;
+            animation: fadeIn 3s forwards;
+        }
+
+        .small-ball:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="left-menu">这里是菜单栏，占位</div>
+        <div class="container">
+            <div class="top-area">
+                <div class="left-area">
+                    <div id="mainEchart" style="width: 600px; height: 400px;">
+                        <div class="balloon-container">
+                            <div class="big-ball"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-area">
+                    <div class="right-content">
+                        <ul class="primary-ul">
+                            <li class="item"><span class="key">SKU Name：</span><span class="value">Player Stratocaster
+                                    HSS Plus Top Maple Fingerboard Limited-Edition Electric Blue Burst </span></li>
+                            <li class="item"><span class="key">SKU ID：</span><span
+                                    class="value">site551500000257004</span></li>
+                            <li class="item"><span class="key">Display ID：</span><span
+                                    class="value">51500000257004</span></li>
+                            <li class="item"><span class="key">Parent Product：</span><span class="value">player
+                                    Stratocaster HSS Plus Top Maple Fingerboard Limited-Edition Electric Guitar</span>
+                            </li>
+                        </ul>
+                        <div class="price-content">
+                            <table class="price-list">
+                                <caption>Price List</caption>
+                                <thead>
+                                    <tr>
+                                        <th>Our Price</th>
+                                        <th>MSRP</th>
+                                        <th>Savings</th>
+                                        <th>MAP</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>$999.99</td>
+                                        <td>$1299.99</td>
+                                        <td>$300.00</td>
+                                        <td>$1099.99</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="price-list">
+                                <caption>On Sale List</caption>
+                                <thead>
+                                    <tr>
+                                        <th>On Sale Price</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>$999.99</td>
+                                        <td>2024-10-22</td>
+                                        <td>2025-11-09</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <ul>
+                    <li class="title-bg checked">
+                        <div class="title">General</div>
+                    </li>
+                    <li class="title-bg">
+                        <div class="title">Pricing</div>
+                    </li>
+                    <li class="title-bg">
+                        <div class="title">Inventory</div>
+                    </li>
+                    <li class="title-bg">
+                        <div class="title">Series Skus</div>
+                    </li>
+                    <li class="title-bg free-gift">
+                        <div class="title">Free Gift</div>
+                    </li>
+                    <li class="title-bg">
+                        <div class="title">Bundle Skus</div>
+                    </li>
+                    <li class="title-bg">
+                        <div class="title">Media</div>
+                    </li>
+                    <li class="title-bg">
+                        <div class="title">Sticker</div>
+                    </li>
+                    <li class="title-bg">
+                        <div class="title">Dynamic Attributes</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Modal结构 -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <table class="free-gift-table">
+                    <div><span class="title">Free Gift</span><button>Add</button> </div>
+                    <thead>
+                        <tr>
+                            <th>SKU Id</th>
+                            <th>SKU Name</th>
+                            <th>Condition</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Quantity</th>
+                            <th>channel</th>
+                            <th>Handle</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>site551500000257004</td>
+                            <td>leafter Guitar strap nary blue 2 in </td>
+                            <td>new</td>
+                            <td><input type="date" name="start-date"></td>
+                            <td><input type="date" name="end-date"></td>
+                            <td><input maxlength="4" name="/ccc/catalog/formhandler/CCCUpdateSkuFormHandler.value.quantity" value="1" class="fgQuantity" style="width: 60px;"></td>
+                            <td>
+                                <ul class="channel-item">
+                                    <li><span class="channel-title">GC COM:</span><div class="channel-options"><input type="radio" name="selection" value="Yes"> <label for="">Yes</label> <input type="radio" name="selection" value="No"> <label for="">No</label></div></li>
+                                    <li><span class="channel-title">CALL_CENTER:</span><div class="channel-options"><input type="radio" name="selection" value="Yes"> <label for="">Yes</label> <input type="radio" name="selection" value="No"> <label for="">No</label></div></li>
+                                    <li><span class="channel-title">POS:</span><div class="channel-options"><input type="radio" name="selection" value="Yes"> <label for="">Yes</label> <input type="radio" name="selection" value="No"> <label for="">No</label></div></li>
+                                    <li><span class="channel-title">SPO:</span><div class="channel-options"><input type="radio" name="selection" value="Yes"> <label for="">Yes</label> <input type="radio" name="selection" value="No"> <label for="">No</label></div></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <div class="button-group"><button>Update</button><button>Delete</button></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        document.addEventListener( "DOMContentLoaded", function () {
+            const container = document.querySelector( '.balloon-container' );
+            const bigBall = document.querySelector( '.big-ball' );
+            const numSmallBalls = 8;
+            const distance = 200; // Distance from the center of the big ball
+
+            for ( let i = 0; i < numSmallBalls; i++ )
+            {
+                const angle = ( i / numSmallBalls ) * ( 2 * Math.PI );
+                const x = distance * Math.cos( angle );
+                const y = distance * Math.sin( angle );
+
+                const smallBall = document.createElement( 'div' );
+                smallBall.classList.add( 'small-ball' );
+                smallBall.style.left = `calc(50% + ${x - 75}px)`;
+                smallBall.style.top = `calc(50% + ${y - 75}px)`;
+                smallBall.style.animationDelay = `${i * 0.1}s`;
+
+                container.appendChild( smallBall );
+            }
+
+
+            // tab切换
+            const listItems = document.querySelectorAll( '.footer ul li' );
+            listItems.forEach( item => {
+                item.addEventListener( 'click', function () {
+                    listItems.forEach( sibling => sibling.classList.remove( 'checked' ) );
+                    this.classList.add( 'checked' );
+                } );
+            } );
+
+
+            // 获取Modal元素
+            var modal = document.getElementById( "myModal" );
+
+            // 获取关闭按钮
+            var span = document.getElementsByClassName( "close" )[0];
+
+            // 获取.free-gift类的li元素
+            var freeGiftItem = document.querySelector( '.free-gift' );
+
+            // 点击.free-gift类的li元素时，打开Modal
+            if ( freeGiftItem )
+            {
+                freeGiftItem.addEventListener( 'click', function () {
+                    modal.style.display = "block";
+                } );
+            }
+
+            // 点击关闭按钮时，关闭Modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // 点击Modal外部时，关闭Modal
+            window.onclick = function ( event ) {
+                if ( event.target == modal )
+                {
+                    modal.style.display = "none";
+                }
+            }
+        } );
+    </script>
+</body>
+
+</html>
