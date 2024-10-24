@@ -428,6 +428,9 @@ a {
   left: calc(50% - 100px);
   top: calc(50% - 100px);
 }
+.big-ball.false{
+  background: -webkit-linear-gradient(left, #f70c0c, #ff4343);
+}
 
 .small-ball {
   position: absolute;
@@ -439,7 +442,9 @@ a {
   animation: fadeIn 3s forwards;
   transition: all 1s ease;
 }
-
+.small-ball.false{
+  background: -webkit-linear-gradient(left, #f70c0c, #ff4343);
+}
 .small-ball:hover {
   transform: scale(1.2) ; 
 }
