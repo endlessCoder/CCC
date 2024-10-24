@@ -421,8 +421,8 @@ a {
 /* 左边的特效 */
 .big-ball {
   position: absolute;
-  width: 250px;
-  height: 250px;
+  width: 180px;
+  height: 180px;
   background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
   border-radius: 50%;
   left: calc(50% - 100px);
@@ -431,38 +431,27 @@ a {
 
 .small-ball {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   background: -webkit-linear-gradient(left, #00aeff, #1fc7d3);
   border-radius: 50%;
   opacity: 0;
-  transition: all 3s;
-  animation: fadeIn 2s forwards;
+  animation: fadeIn 3s forwards;
+  transition: all 1s ease;
 }
 
 .small-ball:hover {
-  transform: scale(1.2);
+  transform: scale(1.2) ; 
 }
 
 @keyframes fadeIn {
   from {
-    opacity: 0;
-    transform: scale(0.5);
+      opacity: 0;
+      transform: scale(0.5);
   }
 
   to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
+      opacity: 1;
+      transform: scale(1);
   }
 }
