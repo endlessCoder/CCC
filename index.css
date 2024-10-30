@@ -44,12 +44,12 @@ a {
 
   .left-area {
     position: relative;
-    width: 600px;
+    width: 750px;
     height: auto;
   }
 
   .right-area {
-    width: calc(100% - 610px);
+    width: calc(100% - 760px);
     height: 95%;
     margin-left: 10px;
     position: relative;
@@ -353,14 +353,14 @@ a {
       top: 30px;
     }
 
-    .title-bg.checked {
+    a.checked {
       .title {
         color: #2424c3;
         font-weight: 600;
         animation: float 3s ease-in-out infinite;
       }
     }
-    .title-bg:hover {
+    a:hover {
       .title {
         animation: float 3s ease-in-out infinite;
       }
@@ -419,13 +419,20 @@ a {
 }
 
 /* 左边的特效 */
+.balloon-container{
+  width: 750px;
+  height: 750px;
+  background: url('./img/circle-bg.png') no-repeat;
+  background-size: contain;
+  position: relative;
+}
 .big-ball {
   position: absolute;
   width: 180px;
   height: 180px;
   background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
   border-radius: 50%;
-  left: calc(50% - 100px);
+  left: calc(50% - 80px);
   top: calc(50% - 100px);
 }
 .big-ball.false{
@@ -449,6 +456,36 @@ a {
   transform: scale(1.2) ; 
 }
 
+.btn-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-area button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #83c0f1;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-area button:hover {
+    background-color: #5b9fe9;
+}
+
+.btn-area .secondary-btn {
+    background-color: #6c757d;
+}
+
+.btn-area .secondary-btn:hover {
+    background-color: #5a6268;
+}
 @keyframes fadeIn {
   from {
       opacity: 0;
@@ -458,6 +495,16 @@ a {
   to {
       opacity: 1;
       transform: scale(1);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
   }
 }
 
