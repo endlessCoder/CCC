@@ -771,4 +771,8 @@ a {
 
 .refresh-button {
   width: 100%;
+  font-size: 20px;
+  padding: 14px 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
