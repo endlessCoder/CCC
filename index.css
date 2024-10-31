@@ -720,3 +720,8 @@ a {
   display: flex;
   justify-content: end;
 }
+
+.inventory-content {
+  max-height: 500px;
+  overflow-y: auto;
+}
