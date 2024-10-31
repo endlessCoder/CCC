@@ -108,7 +108,7 @@ a {
 
     .primary-ul li {
       width: 48%;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       background-color: #f9f9f9;
       border: 1px solid #ddd;
       border-radius: 8px;
@@ -226,6 +226,32 @@ a {
 
     .price-list .channel-options input[type="radio"] {
       margin-right: 5px;
+    }
+
+    .search-area{
+      display: flex;
+      margin-bottom: 14px;
+      gap: 10px;
+    }
+    .search-area input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+  
+    .search-area button {
+      padding: 10px 15px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+  
+    .search-area button:hover {
+      background-color: #0056b3;
     }
   }
 
