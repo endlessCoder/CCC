@@ -21,14 +21,46 @@
                             <div class="searchable-value">true</div>
                         </div>
                     </div>
-                    <div class="btn-area">
-                        <button>add</button>
-                        <button>add 1</button>
-                        <button>add 2</button>
-                        <button>add 3</button>
-                        <button>add 4</button>
-                        <button>add 5</button>
-                        <button>add 6</button>
+                    <div class="option-wrapper">
+                        <div class="option-container">
+                            <div class="refresh-container"><button class="button">Refresh</button></div>
+                            <table class="price-list">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>In Endeca index: false</td>
+                                        <td>
+                                            <button class="button button-disabled" disabled>Add To Partial</button>
+                                            <button class="button button-disabled" disabled>Run Partial</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>In Algolia index: true</td>
+                                        <td>
+                                            <button class="button">Add To Partial</button>
+                                            <button class="button">Run Partial</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>In Endeca partial table: true</td>
+                                        <td>
+                                            <button class="button">Run Partial</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>In Algolia partial table: true</td>
+                                        <td>
+                                            <button class="button">Run Partial</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div class="right-area">

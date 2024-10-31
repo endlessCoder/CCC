@@ -157,27 +157,29 @@ a {
       background-color: #f2f2f2;
       color: #333;
     }
+
     .price-list tr:hover {
       background-color: #e3dfdf52;
     }
-
-
 
     .price-list .button-group {
       display: flex;
       gap: 10px;
 
-      .delete-btn{
+      .delete-btn {
         background-color: #f00;
       }
-      .delete-btn:hover{
+
+      .delete-btn:hover {
         background-color: #b91111;
       }
     }
-    .add-gift{
+
+    .add-gift {
       display: flex;
       justify-content: end;
-      .add-btn{
+
+      .add-btn {
         padding: 12px 12px;
         width: 60px;
         border: none;
@@ -187,7 +189,7 @@ a {
         border-radius: 4px;
       }
     }
-    
+
     .price-list .button-group button {
       padding: 8px 12px;
       border: none;
@@ -223,6 +225,7 @@ a {
       margin-right: 5px;
     }
   }
+
   /* 自定义滚动条样式 */
   .right-content::-webkit-scrollbar {
     width: 10px;
@@ -304,11 +307,13 @@ a {
         color: #2424c3;
         font-weight: 600;
         animation: float 3s ease-in-out infinite;
+
         a {
           color: #2424c3;
         }
       }
     }
+
     .title-bg:hover {
       .title {
         animation: float 3s ease-in-out infinite;
@@ -324,6 +329,7 @@ a {
     a {
       display: block;
     }
+
     .title-bg {
       width: 143px;
       height: 100px;
@@ -362,6 +368,7 @@ a {
         animation: float 3s ease-in-out infinite;
       }
     }
+
     a:hover {
       .title {
         animation: float 3s ease-in-out infinite;
@@ -382,10 +389,13 @@ a {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 .modal.show {
   display: block;
-  opacity: 1; /* 显示时的透明度 */
+  opacity: 1;
+  /* 显示时的透明度 */
 }
+
 .modal-content {
   background-color: #f1f1f1;
   margin: 10% auto;
@@ -398,12 +408,15 @@ a {
   transition: transform 0.3s ease;
   transform: translateY(-50px);
 }
+
 .line-bg {
   position: absolute;
   top: 0;
 }
+
 .modal.show .modal-content {
-  transform: translateY(0); /* 显示时的位置 */
+  transform: translateY(0);
+  /* 显示时的位置 */
 }
 
 .close {
@@ -421,13 +434,14 @@ a {
 }
 
 /* 左边的特效 */
-.balloon-container{
+.balloon-container {
   width: 750px;
   height: 750px;
   background: url('./img/circle-bg.png') no-repeat;
   background-size: contain;
   position: relative;
 }
+
 .big-ball {
   position: absolute;
   width: 180px;
@@ -437,7 +451,8 @@ a {
   left: calc(50% - 80px);
   top: calc(50% - 100px);
 }
-.big-ball.false{
+
+.big-ball.false {
   background: -webkit-linear-gradient(left, #f70c0c, #ff4343);
 }
 
@@ -451,55 +466,60 @@ a {
   animation: fadeIn 3s forwards;
   transition: all 1s ease;
 }
-.small-ball.false{
+
+.small-ball.false {
   background: -webkit-linear-gradient(left, #f70c0c, #ff4343);
 }
+
 .small-ball:hover {
-  transform: scale(1.2) ; 
+  transform: scale(1.2);
 }
 
 .btn-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .btn-area button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #83c0f1;
-    color: white;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  border: none;
+  background-color: #83c0f1;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-area button:hover {
-    background-color: #5b9fe9;
+  background-color: #5b9fe9;
 }
 
 .btn-area .secondary-btn {
-    background-color: #6c757d;
+  background-color: #6c757d;
 }
 
 .btn-area .secondary-btn:hover {
-    background-color: #5a6268;
+  background-color: #5a6268;
 }
+
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      transform: scale(0.5);
+    opacity: 0;
+    transform: scale(0.5);
   }
 
   to {
-      opacity: 1;
-      transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
   }
 }
+
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0);
@@ -530,4 +550,173 @@ a {
 
 .searchable-value {
   font-size: 14px;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #83c0f1;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button-disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.option-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.option-container {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+
+  .primary-ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .primary-ul li {
+    width: 48%;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 6px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+  }
+
+  .primary-ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .primary-ul li .key {
+    font-size: 18px;
+    color: #333;
+    white-space: nowrap;
+  }
+
+  .primary-ul li .value {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+  }
+
+  .price-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .price-list caption {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .price-list th,
+  .price-list td {
+    border: 1px solid #999;
+    padding: 8px;
+    color: #666;
+  }
+
+  .price-list th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+
+  .price-list tr:hover {
+    background-color: #e3dfdf52;
+  }
+
+  .price-list .button-group {
+    display: flex;
+    gap: 10px;
+
+    .delete-btn {
+      background-color: #f00;
+    }
+
+    .delete-btn:hover {
+      background-color: #b91111;
+    }
+  }
+
+  .add-gift {
+    display: flex;
+    justify-content: end;
+
+    .add-btn {
+      padding: 12px 12px;
+      width: 60px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  }
+
+  .price-list .button-group button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .price-list .button-group button:hover {
+    background-color: #0056b3;
+  }
+
+  .price-list .channel-item {
+    list-style: none;
+    padding: 0;
+  }
+
+  .price-list .channel-item li {
+    margin-bottom: 10px;
+  }
+
+  .price-list .channel-title {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .price-list .channel-options {
+    display: inline-block;
+  }
+
+  .price-list .channel-options input[type="radio"] {
+    margin-right: 5px;
+  }
+}
+
+.refresh-container {
+  display: flex;
+  justify-content: end;
 }
