@@ -716,12 +716,11 @@ a {
   }
 }
 
-.refresh-container {
-  display: flex;
-  justify-content: end;
-}
-
 .inventory-content {
   max-height: 500px;
   overflow-y: auto;
+}
+
+.refresh-button {
+  width: 100%;
 }
