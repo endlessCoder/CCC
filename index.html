@@ -153,6 +153,7 @@
                                         Guitar</span>
                                 </li>
                             </ul>
+
                         </section>
                         <section id="Pricing" class="section-item price-content">
                             <h2>Pricing</h2>
@@ -734,9 +735,9 @@
 
 
     <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
-            const container = document.querySelector('.balloon-container');
-            const bigBall = document.querySelector('.big-ball');
+        document.addEventListener( "DOMContentLoaded", function () {
+            const container = document.querySelector( '.balloon-container' );
+            const bigBall = document.querySelector( '.big-ball' );
             const fakeData = [
                 { fieldName: 'Searchable', value: true },
                 { fieldName: 'condition', value: 'new' },
@@ -750,55 +751,57 @@
             const numSmallBalls = fakeData.length;
             const distance = 200; // Distance from the center of the big ball
 
-            for (let i = 0; i < numSmallBalls; i++) {
-                const angle = (i / numSmallBalls) * (2 * Math.PI);
-                const x = distance * Math.cos(angle);
-                const y = distance * Math.sin(angle);
+            for ( let i = 0; i < numSmallBalls; i++ )
+            {
+                const angle = ( i / numSmallBalls ) * ( 2 * Math.PI );
+                const x = distance * Math.cos( angle );
+                const y = distance * Math.sin( angle );
 
-                const smallBall = document.createElement('div');
-                smallBall.classList.add('small-ball');
+                const smallBall = document.createElement( 'div' );
+                smallBall.classList.add( 'small-ball' );
                 smallBall.style.left = `calc(50% + ${x - 55}px)`;
                 smallBall.style.top = `calc(50% + ${y - 60}px)`;
                 smallBall.style.animationDelay = `${i * 0.1}s`;
 
-                container.appendChild(smallBall);
+                container.appendChild( smallBall );
 
-                const fieldName = document.createElement('div');
-                fieldName.classList.add('field-name');
+                const fieldName = document.createElement( 'div' );
+                fieldName.classList.add( 'field-name' );
                 fieldName.textContent = `${fakeData[i].fieldName}:`;
-                const fieldValue = document.createElement('div');
-                fieldValue.classList.add('field-value');
+                const fieldValue = document.createElement( 'div' );
+                fieldValue.classList.add( 'field-value' );
                 fieldValue.textContent = fakeData[i].value;
-                smallBall.appendChild(fieldName);
-                smallBall.appendChild(fieldValue);
+                smallBall.appendChild( fieldName );
+                smallBall.appendChild( fieldValue );
             }
 
 
             // tab切换
-            const listItems = document.querySelectorAll('.footer .nav a');
-            console.log('listItems', listItems);
-            listItems.forEach(item => {
-                item.addEventListener('click', function () {
-                    listItems.forEach(sibling => sibling.classList.remove('checked'));
-                    this.classList.add('checked');
-                });
-            });
+            const listItems = document.querySelectorAll( '.footer .nav a' );
+            console.log( 'listItems', listItems );
+            listItems.forEach( item => {
+                item.addEventListener( 'click', function () {
+                    listItems.forEach( sibling => sibling.classList.remove( 'checked' ) );
+                    this.classList.add( 'checked' );
+                } );
+            } );
 
 
             // 获取Modal元素
-            var modal = document.getElementById("myModal");
+            var modal = document.getElementById( "myModal" );
 
             // 获取关闭按钮
-            var span = document.getElementsByClassName("close")[0];
+            var span = document.getElementsByClassName( "close" )[0];
 
             // 获取.free-gift类的li元素
-            var freeGiftItem = document.querySelector('.free-gift');
+            var freeGiftItem = document.querySelector( '.free-gift' );
 
             // 点击.free-gift类的li元素时，打开Modal
-            if (freeGiftItem) {
-                freeGiftItem.addEventListener('click', function () {
+            if ( freeGiftItem )
+            {
+                freeGiftItem.addEventListener( 'click', function () {
                     // modal.style.display = "block";
-                });
+                } );
             }
 
             // 点击关闭按钮时，关闭Modal
@@ -807,12 +810,13 @@
             }
 
             // 点击Modal外部时，关闭Modal
-            window.onclick = function (event) {
-                if (event.target == modal) {
+            window.onclick = function ( event ) {
+                if ( event.target == modal )
+                {
                     modal.style.display = "none";
                 }
             }
-        });
+        } );
     </script>
 </body>
 
