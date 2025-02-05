@@ -6,6 +6,10 @@ body {
   padding: 0;
 }
 
+h2 {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   color: #333;
@@ -84,12 +88,17 @@ a {
 
     .section-item {
       border: 1px solid #02affe;
-      padding: 10px;
+      padding: 15px 10px;
       border-radius: 4px;
       margin-bottom: 24px;
       background-color: #d0eeff75;
       max-height: 500px;
+      position: relative;
+    }
+    .section-content {
       overflow-y: auto;
+      margin-top: 10px;
+      max-height: 470px;
     }
 
     h2 {
@@ -252,6 +261,18 @@ a {
   
     .search-area button:hover {
       background-color: #0056b3;
+    }
+
+    .first-section {
+      margin-top: 10px;
+    }
+
+    .section-title {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      background: white;
+      left: 50%;
+      top: 0;
     }
   }
 
