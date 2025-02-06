@@ -296,21 +296,21 @@ a {
   }
 
   /* 自定义滚动条样式 */
-  .section-item::-webkit-scrollbar {
+  .section-content::-webkit-scrollbar {
     width: 6px;
   }
 
-  .section-item::-webkit-scrollbar-track {
+  .section-content::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 10px;
   }
 
-  .section-item::-webkit-scrollbar-thumb {
+  .section-content::-webkit-scrollbar-thumb {
     background: #ccc;
     border-radius: 10px;
   }
 
-  .section-item::-webkit-scrollbar-thumb:hover {
+  .section-content::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
 }

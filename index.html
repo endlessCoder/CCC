@@ -122,7 +122,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="right-content">
+                    <div class="right-content" id="right-content">
                         <section id="General" class="section-item first-section">
                             <h2 class="section-title">General</h2>
                             <div class="section-content">
@@ -651,14 +651,56 @@
 
             // tab切换
             const listItems = document.querySelectorAll('.footer .nav a');
-            console.log('listItems', listItems);
-            listItems.forEach(item => {
-                item.addEventListener('click', function () {
-                    listItems.forEach(sibling => sibling.classList.remove('checked'));
-                    this.classList.add('checked');
+            const rightContent = document.getElementById('right-content');
+            // Update checked class based on URL hash
+            function updateCheckedClass(hash) {
+                listItems.forEach(item => {
+                    if (item.getAttribute('href') === hash) {
+                        item.classList.add('checked');
+                    } else {
+                        item.classList.remove('checked');
+                    }
                 });
+            }
+
+            // Function to get the current section in view
+            function getCurrentSection() {
+                const sections = document.querySelectorAll('section');
+                let currentSection = '#General';
+                
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    // Check if section is in viewport (allowing for some margin at the top)
+                    if (rect.top <= 100 && rect.bottom > 0) {
+                        currentSection = '#' + section.id;
+                    }
+                });
+                
+                return currentSection;
+            }
+
+            // Handle scroll events with debounce
+            let scrollTimeout;
+            rightContent.addEventListener('scroll', function() {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(function() {
+
+                    const currentHash = getCurrentSection();
+                    if (window.location.hash !== currentHash) {
+                        // Update URL without scrolling
+                        history.replaceState(null, null, currentHash);
+                        updateCheckedClass(currentHash);
+                    }
+                }, 100); // Debounce time of 100ms
             });
 
+            // Initial check on page load
+            updateCheckedClass(window.location.hash || '#General');
+
+            // Listen for hash changes
+            window.addEventListener('hashchange', function() {
+                updateCheckedClass(window.location.hash);
+            });
 
             // 获取Modal元素
             var modal = document.getElementById("myModal");
